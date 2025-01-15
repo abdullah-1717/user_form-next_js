@@ -55,8 +55,46 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-blue-900 flex items-center justify-center">
-      <div className="bg-blue-950 p-6 rounded-3xl w-2/4">
+    // <div className="min-h-screen bg-blue-900 flex items-center justify-center">
+    //   <div className="bg-blue-950 p-6 rounded-3xl w-2/4">
+    //     <div className="bg-white pl-6 p-4 rounded-3xl">
+    //       <h1 className="font-bold text-4xl">Add User</h1>
+    //       <p>Enter name and email:</p>
+    //       <form onSubmit={handleSubmit}>
+    //         <label className="mr-2 font-bold text-2xl">Name:</label> <br />
+    //         <input
+    //           className="border-2 w-full p-2"
+    //           placeholder="Enter your name"
+    //           value={name}
+    //           onChange={(e) => setName(e.target.value)}
+    //         />{' '}
+    //         <br />
+    //         <label className="mr-2 font-bold text-2xl">Email:</label> <br />
+    //         <input
+    //           className="border-2 w-full p-2"
+    //           placeholder="Enter your email"
+    //           value={email}
+    //           onChange={(e) => setEmail(e.target.value)}
+    //         />
+    //         <div className="flex justify-center">
+    //           <button className="bg-blue-950 text-white text-2xl pt-1 pl-12 pr-12 pb-1 font-bold rounded-lg mt-4">
+    //             Submit
+    //           </button>
+    //         </div>
+    //       </form>
+    //     </div>
+        
+    //     <div className="bg-white p-2 rounded-3xl mt-4">
+    //       <div className="text-white">
+    //         {users.length > 0 && (
+    //           <div className="bg-blue-950 p-4 rounded-2xl ">
+    //             <h2 className="font-bold text-2xl">User  List</h2>
+    //             <ul>
+    //               {users.map((user, index) => (
+    //                 <li key={index} className="flex justify-between items-center border-b py-2">
+    //                   <div>
+    <div className="min-h-screen bg-blue-900 flex items-center justify-center p-4">
+      <div className="bg-blue-950 p-6 rounded-3xl w-full max-w-md">
         <div className="bg-white pl-6 p-4 rounded-3xl">
           <h1 className="font-bold text-4xl">Add User</h1>
           <p>Enter name and email:</p>
@@ -91,12 +129,12 @@ export default function Home() {
                 <h2 className="font-bold text-2xl">User  List</h2>
                 <ul>
                   {users.map((user, index) => (
-                    <li key={index} className="flex justify-between items-center border-b py-2">
+                    <li key={index} className="flex justify-between items-center border-b py-2 overflow-hidden">
                       <div>
                         <span className="font-bold">{user.name}</span> : <span>{user.email}</span>
                       </div>
-                      <div className="flex space-x-2">
-                        <button onClick={() => handleEdit(index)} className="text-white">
+                      <div className="flex flex-col sm:flex-row space-x-2 sm:space-x-2 space-y-2 sm:space-y-0 ">
+                        <button onClick={() => handleEdit(index)} className="text-white ml-2">
                           <FaEdit />
                         </button>
                         <button onClick={() => handleRemove(index)} className="text-red-500">
